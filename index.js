@@ -30,6 +30,9 @@ function sleep(ms) {
 
 function check() {
     document.onkeydown = function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
         if (e.key === " ") {
             keyPressed = e.key;
         }
@@ -91,9 +94,16 @@ async function game(row) {
         await sleep(500);
     }
 
-    return;
+    keyPressed = null;
+
+    return game(row - 1);
 
 }
+
+
+
+
+
 
 
 game(14);
