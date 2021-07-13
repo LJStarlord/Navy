@@ -94,6 +94,19 @@ async function game(row) {
         await sleep(500);
     }
 
+    if (row < 14) {
+        for (let i = 0; i < board[row].length; i++) {
+            var element = board[row][i];
+            var under = board[row + 1][i];
+
+            if (!(under.getAttribute("class") === "checked square")) {
+                element.setAttribute("class", "square");
+            }
+
+
+        }
+    }
+
     keyPressed = null;
 
     return game(row - 1);
