@@ -39,18 +39,18 @@ function check() {
 
 
 var end = false;
-async function checking() {
+async function game(row) {
     check();
     var counter = 0;
 
     while (!keyPressed) {
 
         if (counter > 2) {
-            var square = board[board.length - 1][counter - 3];
+            var square = board[row][counter - 3];
             square.setAttribute("class", "square");
         }
         if (counter === 0) {
-            var square = board[board.length - 1][3];
+            var square = board[row][3];
             square.setAttribute("class", "square");
             end = false;
         }
@@ -64,7 +64,7 @@ async function checking() {
 
 
 
-        var square = board[board.length - 1][counter];
+        var square = board[row][counter];
         square.setAttribute("class", "checked square");
 
 
@@ -78,7 +78,7 @@ async function checking() {
 
 
             if (counter < 3) {
-                var square = board[board.length - 1][counter + 4];
+                var square = board[row][counter + 4];
                 square.setAttribute("class", "square");
             }
 
@@ -91,7 +91,9 @@ async function checking() {
         await sleep(500);
     }
 
+    return;
+
 }
 
 
-checking();
+game(14);
