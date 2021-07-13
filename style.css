@@ -26,3 +26,14 @@ body {
     padding-top: 10px;
     padding-bottom: 15px;
 }
+
+#rules {
+    width: 300px;
+    border: 15px solid navy;
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    background-color: red;
+}
