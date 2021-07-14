@@ -36,4 +36,11 @@ body {
     font-family: 'Encode Sans SC', sans-serif;
     color: white;
     background-color: red;
+    text-align: center;
+    margin-left: 39%;
+}
+
+#title {
+    text-align: center;
+    margin-left: 14%;
 }

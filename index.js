@@ -113,6 +113,8 @@ async function game(row) {
         }
     }
 
+
+
     if (checker === 0) {
         return;
     }
