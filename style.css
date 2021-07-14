@@ -1,0 +1,207 @@
+
+
+
+
+
+.titleNav {
+    list-style-type: none;
+    margin: 1px;
+    padding: 5px;
+    overflow: hidden;
+    background-color: gray;
+}
+ /* horizontal navigation bar */
+.navBar {
+    list-style-type: none;
+    margin: 1px;
+    padding: 5px;
+    overflow: hidden;
+    background-color:  rgb(41, 40, 40);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    font-family: "optima", sans-serif;
+    display:  block;
+    height: 30px;
+    color: white;
+    text-align: left;
+    font-size: 25px;
+    padding: 11px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: blue;
+}
+/*  */
+
+.gameHeader {
+    text-align: center;
+    color: yellow;
+    font-size: 60px;
+}
+
+.gameP1 {
+    text-align: center;
+    color: yellow;
+    font-size: 20px;
+}
+
+.gameP2 {
+    text-align: center;
+    color: yellow;
+    font-size: 30px;
+} 
+
+
+.gameBody {
+    background-color: gray;
+}
+
+.header {
+    font-family: "optima", sans-serif;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 60px;
+    color: white;
+}
+
+.aboutBody {
+    background-color: white;
+}
+
+#aboutDivOne {
+    background-color: honeydew;
+}
+
+#homeDiv {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+    width: 1750px;
+}
+#imageStacker {
+    margin-right:45px;
+    float: right;
+    height: 450px;
+    width: 330px
+}
+
+#divHeader {
+    font-family: "optima", sans-serif;
+    padding-top: 30px;
+    margin-left: 20px;
+    text-align: left;
+    color: black;
+    font-size: 35px;
+    font-weight: 100px;
+}
+
+.divPHome{
+    font-family: "optima", sans-serif;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 30px;
+    margin-right: 500px;
+    padding-bottom: 75px;
+}
+
+/* game */
+.square {
+    height: 40px;
+    width: 40px;
+    background-color: #000;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.checked {
+    background-color: orangered;
+    border: .4px solid white;
+    height: 37.6px;
+    width: 37.6px;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+#board {
+    margin-left: auto;
+    margin-right: auto;
+    height: 650px;
+    width: 300px;
+    background-color: navy;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/*  */
+
+
+
+
+.backButton {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgb(41, 40, 40);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .backButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .backButton span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  
+  .backButton:hover span {
+    padding-left: 25px;
+  }
+  
+  .backButton:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+
+
+
+
+  .grid-container {
+    display: grid;
+    margin: 1px;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    grid-template-columns: 65% 33%;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+
