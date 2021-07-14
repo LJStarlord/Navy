@@ -30,6 +30,9 @@ function sleep(ms) {
 
 function check() {
     document.onkeydown = function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
         if (e.key === " ") {
             keyPressed = e.key;
         }
@@ -91,9 +94,39 @@ async function game(row) {
         await sleep(500);
     }
 
-    return;
+
+
+    if (row < 14) {
+
+        var checker = 0;
+
+        for (let i = 0; i < board[row].length; i++) {
+            var element = board[row][i];
+            var under = board[row + 1][i];
+
+            if (!(under.getAttribute("class") === "checked square")) {
+                element.setAttribute("class", "square");
+            } else {
+                checker++;
+            }
+
+        }
+    }
+
+    if (checker === 0) {
+        return;
+    }
+
+    keyPressed = null;
+
+    return game(row - 1);
 
 }
+
+
+
+
+
 
 
 game(14);
