@@ -91,10 +91,10 @@ async function game(row) {
         }
 
 
-        await sleep(500);
+        await sleep(125);
     }
 
-
+    var index = 0;
 
     if (row < 14) {
 
@@ -111,9 +111,8 @@ async function game(row) {
             }
 
         }
+
     }
-
-
 
     if (checker === 0) {
         return;
