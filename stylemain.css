@@ -12,8 +12,8 @@ body {
 
 .checked {
     background-color: orangered;
-    height: 20px;
-    width: 20px;
+    height: 21px;
+    width: 21px;
     display: inline-block;
     margin-left: 1px;
 }
@@ -25,4 +25,15 @@ body {
     background-color: navy;
     padding-top: 10px;
     padding-bottom: 15px;
+}
+
+#rules {
+    width: 300px;
+    border: 15px solid navy;
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    background-color: red;
 }
