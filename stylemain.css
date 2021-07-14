@@ -37,3 +37,7 @@ body {
     color: white;
     background-color: red;
 }
+
+#title {
+    font-family: 'Encode Sans SC', sans-serif;
+}
