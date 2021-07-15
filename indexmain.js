@@ -176,7 +176,7 @@ async function game(row) {
                 return;
             }
         } else if (blocksUnder === 1) {
-            if (checker === blocksUnder) {
+            if (checker === blocksUnder || checker === 3) {
                 lost();
                 console.log("finished");
                 return;
