@@ -156,6 +156,15 @@ async function game(row) {
             await sleep(20)
         }
 
+        if (row === 0) {
+            var text = document.createTextNode("You won a major prize!");
+
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+            await sleep(20)
+
+        }
+
         function lost() {
 
             var text = document.createTextNode("You lost. Try again!");
