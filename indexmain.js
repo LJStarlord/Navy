@@ -27,7 +27,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
+var playing;
 function check() {
     document.onkeydown = function(e) {
         e.stopPropagation();

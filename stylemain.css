@@ -41,3 +41,13 @@ body {
 #title {
     font-family: 'Encode Sans SC', sans-serif;
 }
+#prizes{
+    width: 300px;
+    border: 15px solid navy;
+    padding: 50px;
+    margin: 50px;
+    display: inline-block;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    background-color: red;
+}
