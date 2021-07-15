@@ -1,8 +1,12 @@
+//basic variable declaration of varibles
+
 var board = [];
 var DisplayBoard = document.getElementById("board");
 var keyPressed;
 var DisplayWins = document.getElementById("winningAlert");
 
+
+//creating the board
 for (let i = 0; i < 15; i++) {
     var holder = [];
     for (let j = 0; j < 7; j++) {
@@ -13,7 +17,7 @@ for (let i = 0; i < 15; i++) {
 
 console.log(board);
 
-
+//adding each element into the board for later use
 for (let i = 0; i < board.length; i++) {
     for (let j = 0; j < board[i].length; j++) {
         var newSquare = document.createElement("div");
@@ -24,12 +28,13 @@ for (let i = 0; i < board.length; i++) {
 
 }
 
+
+//function for the animation
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var playing;
-
+//checking specificly for the spacebar
 function check() {
     document.onkeydown = function(e) {
         e.stopPropagation();
@@ -48,6 +53,8 @@ async function game(row) {
     check();
     var counter = 0;
 
+
+    //the animation for the blocks while the spacebar is not pressed
     while (!keyPressed) {
 
         if (counter > 2) {
@@ -92,12 +99,15 @@ async function game(row) {
             counter++;
         }
 
+        //animation of the blocks
 
         await sleep(125);
     }
 
     var checker = 1;
     var blocksUnder = 0;
+
+
 
     if (row < 14) {
 
@@ -118,7 +128,7 @@ async function game(row) {
         }
 
 
-
+        //checking if the red blocks are over other red blocks
         for (let i = 0; i < board[row].length; i++) {
             var element = board[row][i];
             var under = board[row + 1][i];
@@ -146,7 +156,7 @@ async function game(row) {
 
         var winningDiv = document.createElement("div");
         winningDiv.setAttribute("id", "winningBox");
-
+        //winning the minor prize at row 5
         if (row == 5) {
 
             var text = document.createTextNode("You won a minor prize!");
@@ -155,7 +165,7 @@ async function game(row) {
             DisplayWins.appendChild(winningDiv);
             await sleep(20)
         }
-
+        //winning the major prize at the top row
         if (row === 0) {
             var text = document.createTextNode("You won a major prize!");
 
@@ -164,6 +174,8 @@ async function game(row) {
             await sleep(20)
 
         }
+
+        //function when the player loses
 
         function lost() {
 
@@ -176,7 +188,7 @@ async function game(row) {
 
 
 
-
+        //checking when the player loses
 
         if (blocksUnder === 3) {
             if (checker >= blocksUnder) {
@@ -200,21 +212,11 @@ async function game(row) {
     }
     keyPressed = null;
 
+
+
     return game(row - 1);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
