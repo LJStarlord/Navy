@@ -1,6 +1,7 @@
 var board = [];
 var DisplayBoard = document.getElementById("board");
 var keyPressed;
+var DisplayWins = document.getElementById("winningAlert");
 
 for (let i = 0; i < 15; i++) {
     var holder = [];
@@ -27,6 +28,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+var playing;
 
 function check() {
     document.onkeydown = function(e) {
@@ -109,6 +111,7 @@ async function game(row) {
 
             if (element.getAttribute("class") === "checked square") {
                 index = i;
+                console.log(index);
                 break;
             }
 
@@ -129,10 +132,11 @@ async function game(row) {
         }
 
         for (let i = 0; i < 3; i++) {
+
             var element = board[row][index + i];
             var under = board[row + 1][index + i];
 
-            if (under.getAttribute("class") === "square" && element.getAttribute("class") === "checked sqaure") {
+            if (under.getAttribute("class") === "square" && element.getAttribute("class") === "square") {
                 checker++;
             }
 
@@ -140,24 +144,64 @@ async function game(row) {
 
 
 
+        var winningDiv = document.createElement("div");
+        winningDiv.setAttribute("id", "winningBox");
+
+        if (row == 5) {
+
+            var text = document.createTextNode("You won a minor prize!");
+
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+            await sleep(20)
+        }
+
+        function lost() {
+
+            var text = document.createTextNode("You lost. Try again!");
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+        }
 
 
 
 
 
-        if (checker === (1 + blocksUnder)) {
+
+
+        if (blocksUnder === 3) {
+            if (checker >= blocksUnder) {
+                console.log("finished");
+                lost();
+                return;
+            }
+        } else if (blocksUnder === 1) {
+            if (checker === blocksUnder) {
+                lost();
+                console.log("finished");
+                return;
+            }
+
+        } else if (checker >= (1 + blocksUnder)) {
+            lost();
+            console.log("finished");
             return;
         }
 
     }
-
-
-
     keyPressed = null;
 
     return game(row - 1);
 
 }
+
+
+
+
+
+
+
+
 
 
 
