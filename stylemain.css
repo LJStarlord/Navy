@@ -1,0 +1,53 @@
+body {
+    background-color: gray;
+}
+
+.square {
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    display: inline-block;
+    margin-left: 1px;
+}
+
+.checked {
+    background-color: orangered;
+    height: 21px;
+    width: 21px;
+    display: inline-block;
+    margin-left: 1px;
+}
+
+#board {
+    margin-left: 50%;
+    height: 350px;
+    width: 150px;
+    background-color: navy;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+#rules {
+    width: 300px;
+    border: 15px solid navy;
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    background-color: red;
+}
+
+#title {
+    font-family: 'Encode Sans SC', sans-serif;
+}
+#prizes{
+    width: 300px;
+    border: 15px solid navy;
+    padding: 50px;
+    margin: 50px;
+    display: inline-block;
+    font-family: 'Encode Sans SC', sans-serif;
+    color: white;
+    background-color: red;
+}
