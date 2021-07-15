@@ -94,11 +94,27 @@ async function game(row) {
         await sleep(125);
     }
 
-    var index = 0;
+    var checker = 1;
+    var blocksUnder = 0;
 
     if (row < 14) {
 
-        var checker = 0;
+        checker = 0;
+        blocksUnder = 0;
+
+
+        var index = 0;
+        for (let i = 0; i < board[row].length; i++) {
+            var element = board[row][i];
+
+            if (element.getAttribute("class") === "checked square") {
+                index = i;
+                break;
+            }
+
+        }
+
+
 
         for (let i = 0; i < board[row].length; i++) {
             var element = board[row][i];
@@ -107,16 +123,35 @@ async function game(row) {
             if (!(under.getAttribute("class") === "checked square")) {
                 element.setAttribute("class", "square");
             } else {
+                blocksUnder++;
+            }
+
+        }
+
+        for (let i = 0; i < 3; i++) {
+            var element = board[row][index + i];
+            var under = board[row + 1][index + i];
+
+            if (under.getAttribute("class") === "square" && element.getAttribute("class") === "checked sqaure") {
                 checker++;
             }
 
         }
 
+
+
+
+
+
+
+
+        if (checker === (1 + blocksUnder)) {
+            return;
+        }
+
     }
 
-    if (checker === 0) {
-        return;
-    }
+
 
     keyPressed = null;
 

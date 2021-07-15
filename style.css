@@ -3,7 +3,7 @@
     width: 300px;
     height: 3px;
     background-color: white;
-    bottom: 365px;
+    bottom: 340px;
 }
 
 #whiteLine2 {
@@ -11,7 +11,6 @@
     width: 300px;
     height: 3px;
     background-color: white;
-    /* bottom: 365px; */
 }
 
 .titleNav {
@@ -57,20 +56,23 @@ li a:hover {
 
 .gameHeader {
     text-align: center;
-    color: yellow;
+    color: white;
     font-size: 60px;
+    font-family: "optima", sans-serif;
 }
 
 .gameP1 {
     text-align: center;
-    color: yellow;
+    color: white;
     font-size: 20px;
+    font-family: "optima", sans-serif;
 }
 
 .gameP2 {
     text-align: center;
-    color: yellow;
+    color: white;
     font-size: 30px;
+    font-family: "optima", sans-serif;
 }
 
 .gameBody {
@@ -148,7 +150,8 @@ li a:hover {
 }
 
 #board {
-    margin-left: auto;
+    margin-top: 50px;
+    margin-left: 310px;
     margin-right: auto;
     height: 650px;
     width: 300px;
@@ -157,6 +160,7 @@ li a:hover {
     padding-bottom: 15px;
     padding-left: 5px;
     padding-right: 5px;
+    display: inline-block;
 }
 
 
@@ -217,4 +221,27 @@ li a:hover {
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    font-family: "optima", sans-serif;
+}
+
+#rules {
+    width: 300px;
+    border: 15px solid navy;
+    padding: 30px;
+    margin-left: 200px;
+    margin-top: 150px;
+    font-family: "optima", sans-serif;
+    color: white;
+    background-color: red;
+    float: left;
+}
+
+#title {
+    display: inline-block;
+    border: 15px solid navy;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 480px;
+    margin-right: auto;
+    background-color: red;
 }
