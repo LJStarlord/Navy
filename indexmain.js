@@ -1,6 +1,7 @@
 var board = [];
 var DisplayBoard = document.getElementById("board");
 var keyPressed;
+var DisplayWins = document.getElementById("winningAlert");
 
 for (let i = 0; i < 15; i++) {
     var holder = [];
@@ -28,6 +29,7 @@ function sleep(ms) {
 }
 
 var playing;
+
 function check() {
     document.onkeydown = function(e) {
         e.stopPropagation();
@@ -91,14 +93,31 @@ async function game(row) {
         }
 
 
-        await sleep(500);
+        await sleep(125);
     }
 
-
+    var checker = 1;
+    var blocksUnder = 0;
 
     if (row < 14) {
 
-        var checker = 0;
+        checker = 0;
+        blocksUnder = 0;
+
+
+        var index = 0;
+        for (let i = 0; i < board[row].length; i++) {
+            var element = board[row][i];
+
+            if (element.getAttribute("class") === "checked square") {
+                index = i;
+                console.log(index);
+                break;
+            }
+
+        }
+
+
 
         for (let i = 0; i < board[row].length; i++) {
             var element = board[row][i];
@@ -107,21 +126,91 @@ async function game(row) {
             if (!(under.getAttribute("class") === "checked square")) {
                 element.setAttribute("class", "square");
             } else {
+                blocksUnder++;
+            }
+
+        }
+
+        for (let i = 0; i < 3; i++) {
+
+            var element = board[row][index + i];
+            var under = board[row + 1][index + i];
+
+            if (under.getAttribute("class") === "square" && element.getAttribute("class") === "square") {
                 checker++;
             }
 
         }
-    }
 
-    if (checker === 0) {
-        return;
-    }
 
+
+        var winningDiv = document.createElement("div");
+        winningDiv.setAttribute("id", "winningBox");
+
+        if (row == 5) {
+
+            var text = document.createTextNode("You won a minor prize!");
+
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+            await sleep(20)
+        }
+
+        if (row === 0) {
+            var text = document.createTextNode("You won a major prize!");
+
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+            await sleep(20)
+
+        }
+
+        function lost() {
+
+            var text = document.createTextNode("You lost. Try again!");
+            winningDiv.appendChild(text);
+            DisplayWins.appendChild(winningDiv);
+        }
+
+
+
+
+
+
+
+        if (blocksUnder === 3) {
+            if (checker >= blocksUnder) {
+                console.log("finished");
+                lost();
+                return;
+            }
+        } else if (blocksUnder === 1) {
+            if (checker === blocksUnder || checker === 3) {
+                lost();
+                console.log("finished");
+                return;
+            }
+
+        } else if (checker >= (1 + blocksUnder)) {
+            lost();
+            console.log("finished");
+            return;
+        }
+
+    }
     keyPressed = null;
 
     return game(row - 1);
 
 }
+
+
+
+
+
+
+
+
 
 
 

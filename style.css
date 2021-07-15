@@ -1,5 +1,14 @@
+#whiteLine {
+    position: absolute;
+    width: 300px;
+    height: 3px;
+    background-color: white;
+    bottom: 340px;
+}
+
 
 /* title above the nav bar */
+
 .titleNav {
     list-style-type: none;
     margin: 1px;
@@ -9,13 +18,14 @@
 }
 
 
- /* horizontal navigation bar */
+/* horizontal navigation bar */
+
 .navBar {
     list-style-type: none;
     margin: 1px;
     padding: 5px;
     overflow: hidden;
-    background-color:  rgb(41, 40, 40);
+    background-color: rgb(41, 40, 40);
 }
 
 li {
@@ -24,7 +34,7 @@ li {
 
 li a {
     font-family: "optima", sans-serif;
-    display:  block;
+    display: block;
     height: 30px;
     color: white;
     text-align: left;
@@ -32,9 +42,12 @@ li a {
     padding: 11px;
     text-decoration: none;
 }
+
 li a:hover {
     background-color: blue;
 }
+
+
 /*  */
 
 .gameHeader {
@@ -56,10 +69,7 @@ li a:hover {
     color: white;
     font-size: 30px;
     font-family: "optima", sans-serif;
-} 
-
-
-
+}
 
 .header {
     font-family: "optima", sans-serif;
@@ -81,6 +91,7 @@ li a:hover {
     height: 600px;
     width: 1750px;
 } */
+
 #imageStacker {
     margin-right: 45px;
     float: right;
@@ -98,7 +109,7 @@ li a:hover {
     font-weight: 100px;
 }
 
-.divPHome{
+.divPHome {
     position: relative;
     font-family: "optima", sans-serif;
     margin-left: 20px;
@@ -108,10 +119,13 @@ li a:hover {
     padding-bottom: 75px;
 }
 
+
 /* game */
+
 .gameBody {
     background-color: gray;
 }
+
 .square {
     /* position: absolute; */
     height: 40px;
@@ -154,6 +168,7 @@ li a:hover {
     height: 2px;
     bottom: 402.5px;
 }
+
 #prizeLineTwo {
     background-color: white;
     position: absolute;
@@ -161,6 +176,7 @@ li a:hover {
     height: 2px;
     bottom: 446.5px;
 }
+
 #prizeLineThree {
     background-color: white;
     position: absolute;
@@ -168,6 +184,7 @@ li a:hover {
     height: 2px;
     bottom: 622.5px;
 }
+
 #prizeLineFour {
     background-color: white;
     position: absolute;
@@ -175,7 +192,6 @@ li a:hover {
     height: 2px;
     bottom: 666.5px;
 }
-
 
 #vprizeLine {
     background-color: white;
@@ -185,6 +201,7 @@ li a:hover {
     bottom: 402.5px;
     left: 5px;
 }
+
 #vprizeLineTwo {
     background-color: white;
     position: absolute;
@@ -193,6 +210,7 @@ li a:hover {
     bottom: 402.5px;
     right: 8px;
 }
+
 #vprizeLineThree {
     background-color: white;
     position: absolute;
@@ -201,6 +219,7 @@ li a:hover {
     bottom: 622.5px;
     left: 5px;
 }
+
 #vprizeLineFour {
     background-color: white;
     position: absolute;
@@ -210,16 +229,11 @@ li a:hover {
     right: 8px;
 }
 
-
-
 #board {
-
     position: relative;
     margin-left: auto;
-
     margin-top: 50px;
     margin-left: 310px;
-
     margin-right: auto;
     height: 650px;
     width: 300px;
@@ -228,17 +242,13 @@ li a:hover {
     padding-bottom: 15px;
     padding-left: 5px;
     padding-right: 5px;
-
-    z-index: 10
-
+    z-index: 10;
     display: inline-block;
-
 }
-/*  */
-
 
 
 /* button */
+
 .backButton {
     display: inline-block;
     border-radius: 4px;
@@ -253,45 +263,45 @@ li a:hover {
     cursor: pointer;
     margin: 5px;
 }
-  
-  .backButton span {
+
+.backButton span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  .backButton span:after {
+}
+
+.backButton span:after {
     content: '\00ab';
     position: absolute;
     opacity: 0;
     top: 0;
     left: -20px;
     transition: 0.5s;
-  }
-  
-  .backButton:hover span {
+}
+
+.backButton:hover span {
     padding-left: 25px;
-  }
-  
-  .backButton:hover span:after {
+}
+
+.backButton:hover span:after {
     opacity: 1;
     left: 0;
-  }
-
+}
 
 
 /* conntainer in about us */
-  .grid-container {
+
+.grid-container {
     display: grid;
     margin: 1px;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     grid-template-columns: 65% 33%;
     padding: 10px;
-  }
-  
-  .grid-item {
+}
+
+.grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1.5px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -299,6 +309,7 @@ li a:hover {
     text-align: center;
     font-family: "optima", sans-serif;
 }
+
 #rules {
     width: 300px;
     border: 15px solid navy;
@@ -321,23 +332,16 @@ li a:hover {
     background-color: red;
 }
 
-
-
-
-
-
-
-  
-  .grid-container {
+.grid-container {
     display: grid;
     margin: 1px;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     grid-template-columns: 65% 33%;
     padding: 10px;
-  }
-  
-  .grid-item {
+}
+
+.grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1.5px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -346,6 +350,17 @@ li a:hover {
     font-family: "optima", sans-serif;
 }
 
+#rules {
+    width: 300px;
+    border: 15px solid navy;
+    padding: 30px;
+    margin-left: 200px;
+    margin-top: 150px;
+    font-family: "optima", sans-serif;
+    color: white;
+    background-color: red;
+    float: left;
+}
 
 #title {
     position: relative;
